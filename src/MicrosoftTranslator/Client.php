@@ -13,7 +13,7 @@ class Client
      *
      * http://docs.microsofttranslator.com/text-translate.html
      */
-    const AUTH_EXPIRE = 10*60;
+    const AUTH_EXPIRE = 600;
 
     const GUARD_DEFAULT = 'file';
 
