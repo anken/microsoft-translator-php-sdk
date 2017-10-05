@@ -195,6 +195,7 @@ class Client
             'text'        => $text,
             'language'    => $language,
             'options' => 'MaxQuality',
+            'format' => 'audio/mp3',
         ];
 
         return $this->get('/Speak', [], $query_parameters);
