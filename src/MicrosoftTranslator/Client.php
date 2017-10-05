@@ -194,7 +194,7 @@ class Client
         $query_parameters = [
             'text'        => $text,
             'language'    => $language,
-            'options' => 'MaxQuality',
+            'options' => 'MaxQuality|Male',
             'format' => 'audio/mp3',
         ];
 
