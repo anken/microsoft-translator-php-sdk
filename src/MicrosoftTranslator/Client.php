@@ -176,6 +176,31 @@ class Client
     }
 
     /**
+     * Speak the test in one language.
+     *
+     * @param string $text             Required. A string representing the text to speak. The size of the text must
+     *                                 not exceed 10000 characters.
+     * @param string $language         Required. A string representing the language code to speak.
+     *
+     * The language codes are available at https://msdn.microsoft.com/en-us/library/hh456380.aspx
+     *
+     * The API endpoint documentation is available at https://msdn.microsoft.com/en-us/library/ff512421.aspx
+     *
+     * @return \MicrosoftTranslator\Response
+     * @throws \MicrosoftTranslator\Exception
+     */
+    public function speak($text, $language)
+    {
+        $query_parameters = [
+            'text'        => $text,
+            'language'    => $language,
+            'options' => 'MaxQuality',
+        ];
+
+        return $this->get('/Speak', [], $query_parameters);
+    }
+
+    /**
      * Translates a text string from one language to another.
      *
      * @param string $text Required. A string representing the text to translate. The size of the text must
