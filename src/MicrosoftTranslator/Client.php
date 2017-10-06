@@ -189,13 +189,13 @@ class Client
      * @return \MicrosoftTranslator\Response
      * @throws \MicrosoftTranslator\Exception
      */
-    public function speak($text, $language)
+    public function speak($text, $language, $options = 'MaxQuality|Male', $format = 'audio/mp3')
     {
         $query_parameters = [
             'text'        => $text,
             'language'    => $language,
-            'options' => 'MaxQuality|Male',
-            'format' => 'audio/mp3',
+            'options'     => $options,
+            'format'      => $format,
         ];
 
         return $this->get('/Speak', [], $query_parameters);
